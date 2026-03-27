@@ -1078,7 +1078,11 @@
         </div>
         <div class="contact-grid">
             <div class="contact-form-card fade-up">
-                <form id="contactForm" onsubmit="handleSubmit(event)">
+                <form id="contactForm" action="https://formsubmit.co/sabino.sanchez7@gmail.com" method="POST" onsubmit="handleSubmit(event)">
+                    <input type="hidden" name="_subject" value="New Lead from Reynoso's Handyman Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://sabino7sanchez-ship-it.github.io/reynosos-handyman/">
+                    <input type="hidden" name="_template" value="table">
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="John Smith" required>
@@ -1224,19 +1228,13 @@
 
     // ===== FORM HANDLER =====
     function handleSubmit(e) {
-        e.preventDefault();
+        // Don't prevent default — let formsubmit.co receive the POST
         const form = e.target;
         const btn = form.querySelector('button[type="submit"]');
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '&#x2705; Request Sent!';
+        btn.innerHTML = '&#x2705; Sending...';
         btn.style.background = '#22C55E';
         btn.disabled = true;
-        setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-            form.reset();
-        }, 3000);
+        // Form will submit and redirect back via _next hidden field
     }
 
     // ===== PHONE FORMAT =====
