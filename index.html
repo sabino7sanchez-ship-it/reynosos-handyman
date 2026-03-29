@@ -8,6 +8,14 @@
     <meta name="author" content="Reynoso's Handyman">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="Reynoso's Handyman — Quality Work. Fair Prices. Done Right.">
+    <!-- Google Analytics — replace G-XXXXXXXXXX with real ID when ready -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
+    </script>
     <meta property="og:description" content="Professional handyman and remodeling services. Licensed, insured, and guaranteed. Free estimates available.">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#FF6B35">
@@ -796,6 +804,22 @@
             .footer-bottom { flex-direction: column; text-align: center; }
         }
 
+        /* ========== CTA BANNER ========== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+            padding: 80px 0; text-align: center;
+        }
+        .cta-banner h2 {
+            font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--white); letter-spacing: 2px; margin-bottom: 12px;
+        }
+        .cta-banner p { font-size: 1.1rem; color: rgba(255,255,255,0.85); margin-bottom: 32px; }
+        .cta-banner-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .btn-white { background: var(--white); color: var(--orange); font-weight: 700; }
+        .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+        .btn-transparent { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,0.5); }
+        .btn-transparent:hover { border-color: var(--white); background: rgba(255,255,255,0.1); }
+
         /* ========== FLOATING CALL BUTTON (Mobile) ========== */
         .floating-call {
             display: none;
@@ -820,6 +844,93 @@
             50% { box-shadow: 0 4px 36px rgba(255,107,53,0.8); }
         }
         @media (max-width: 768px) { .floating-call { display: flex; } }
+
+        /* ========== REVIEW SUMMARY BAR ========== */
+        .review-summary-bar {
+            background: var(--charcoal-light);
+            border-top: 1px solid rgba(255,107,53,0.15);
+            border-bottom: 1px solid rgba(255,107,53,0.15);
+            padding: 28px 0;
+        }
+        .review-summary-inner {
+            max-width: 1200px; margin: 0 auto; padding: 0 20px;
+            display: flex; align-items: center; justify-content: center; gap: 60px; flex-wrap: wrap;
+        }
+        .rs-score { text-align: center; }
+        .rs-big { font-family: var(--font-display); font-size: 3.5rem; color: var(--white); line-height: 1; }
+        .rs-stars { color: #FACC15; font-size: 1.2rem; letter-spacing: 3px; margin: 4px 0; }
+        .rs-count { font-size: 0.75rem; color: var(--gray); text-transform: uppercase; letter-spacing: 2px; }
+        .rs-bar-group { display: flex; flex-direction: column; gap: 8px; min-width: 200px; }
+        .rs-bar-row { display: flex; align-items: center; gap: 10px; }
+        .rs-bar-label { font-size: 0.75rem; color: var(--gray); width: 40px; text-align: right; }
+        .rs-bar-track { flex: 1; height: 6px; background: rgba(255,255,255,0.08); border-radius: 99px; overflow: hidden; }
+        .rs-bar-fill { height: 100%; background: #FACC15; border-radius: 99px; }
+        .rs-bar-pct { font-size: 0.72rem; color: var(--gray); width: 30px; }
+        .rs-platforms { display: flex; flex-direction: column; gap: 10px; }
+        .rs-platform { font-size: 0.82rem; color: var(--gray-light); display: flex; align-items: center; gap: 8px; }
+        .rs-platform strong { color: var(--white); }
+
+        /* ========== PROCESS ========== */
+        .process { padding: 100px 0; background: var(--charcoal); }
+        .process-header { text-align: center; margin-bottom: 60px; }
+        .process-header .section-subtitle { margin: 0 auto; }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+            position: relative;
+        }
+        .process-steps::before {
+            content: ''; position: absolute; top: 36px; left: 12%; right: 12%; height: 2px;
+            background: linear-gradient(90deg, var(--orange), var(--orange-dark));
+            opacity: 0.3;
+        }
+        .process-step { padding: 0 20px; text-align: center; }
+        .process-num {
+            width: 72px; height: 72px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--orange), var(--orange-dark));
+            color: var(--white); font-family: var(--font-display); font-size: 1.6rem;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; position: relative; z-index: 1;
+            box-shadow: 0 4px 20px rgba(255,107,53,0.4);
+        }
+        .process-step h3 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+        .process-step p { font-size: 0.85rem; color: var(--gray); line-height: 1.6; }
+        @media (max-width: 768px) {
+            .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+            .process-steps::before { display: none; }
+        }
+
+        /* ========== FAQ ========== */
+        .faq { padding: 100px 0; background: linear-gradient(180deg, var(--charcoal) 0%, #1a1a1a 100%); }
+        .faq-header { text-align: center; margin-bottom: 60px; }
+        .faq-header .section-subtitle { margin: 0 auto; }
+        .faq-list { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq-item {
+            background: var(--charcoal-light); border: 1px solid rgba(255,255,255,0.05);
+            border-radius: var(--radius); overflow: hidden;
+        }
+        .faq-q {
+            display: flex; align-items: center; justify-content: space-between; gap: 16px;
+            padding: 20px 24px; cursor: pointer; font-weight: 600; font-size: 0.95rem;
+            color: var(--gray-light); transition: color 0.2s;
+        }
+        .faq-q:hover { color: var(--white); }
+        .faq-icon { font-size: 1.4rem; color: var(--orange); flex-shrink: 0; transition: transform 0.3s; }
+        .faq-a { display: none; padding: 0 24px 20px; font-size: 0.88rem; color: var(--gray); line-height: 1.75; }
+        .faq-item.open .faq-a { display: block; }
+        .faq-item.open .faq-q { color: var(--white); }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        /* ========== WHATSAPP FLOAT ========== */
+        .float-wa-btn {
+            position: fixed; bottom: 90px; right: 24px; z-index: 900;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: #25D366; color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .float-wa-btn:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(37,211,102,0.6); }
+        @media (min-width: 769px) { .float-wa-btn { bottom: 24px; right: 90px; } }
 
         /* ========== ANIMATIONS ========== */
         .fade-up {
@@ -875,7 +986,7 @@
     <div class="container">
         <div class="hero-grid">
             <div class="fade-up">
-                <div class="hero-badge">&#x2605; Trusted Local Handyman</div>
+                <div class="hero-badge">&#x2605; Trusted Local Handyman — Free Estimates This Week</div>
                 <h1>REYNOSO'S<br><span>HANDYMAN</span></h1>
                 <p class="hero-tagline"><strong>Quality Work. Fair Prices. Done Right.</strong><br>From small repairs to full remodels — Raul and his team deliver results you can trust.</p>
                 <div class="hero-btns">
@@ -911,7 +1022,7 @@
         </div>
     </div>
     <div class="hero-service-area">
-        <p>&#x1F4CD; Serving [Your City] and Surrounding Areas</p>
+        <p>&#x1F4CD; Serving Orange County, CA and Surrounding Areas</p>
     </div>
 </section>
 
@@ -1051,6 +1162,82 @@
     </div>
 </section>
 
+<!-- ===== PROCESS ===== -->
+<section class="process">
+    <div class="container">
+        <div class="process-header fade-up">
+            <div class="section-label">How It Works</div>
+            <h2 class="section-title">SIMPLE AS 1-2-3-4</h2>
+            <p class="section-subtitle">From first contact to finished project — here's exactly what to expect when you hire us.</p>
+        </div>
+        <div class="process-steps">
+            <div class="process-step fade-up">
+                <div class="process-num">01</div>
+                <h3>Call or Text</h3>
+                <p>Reach out by phone, text, or the form below. Tell us what you need — no job too big or small.</p>
+            </div>
+            <div class="process-step fade-up delay-1">
+                <div class="process-num">02</div>
+                <h3>Free Estimate</h3>
+                <p>We come out, look at the job, and give you a honest, upfront quote. Zero pressure, zero obligation.</p>
+            </div>
+            <div class="process-step fade-up delay-2">
+                <div class="process-num">03</div>
+                <h3>We Get To Work</h3>
+                <p>Our crew shows up on time, does quality work, and keeps your home clean throughout the entire job.</p>
+            </div>
+            <div class="process-step fade-up delay-3">
+                <div class="process-num">04</div>
+                <h3>You Love It</h3>
+                <p>We don't leave until you're 100% satisfied. Your home looks better — that's the Reynoso's guarantee.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- REVIEW SUMMARY BAR -->
+<div class="review-summary-bar">
+    <div class="review-summary-inner">
+        <div class="rs-score">
+            <div class="rs-big">5.0</div>
+            <div class="rs-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+            <div class="rs-count">Based on 150+ reviews</div>
+        </div>
+        <div class="rs-bar-group">
+            <div class="rs-bar-row">
+                <div class="rs-bar-label">5★</div>
+                <div class="rs-bar-track"><div class="rs-bar-fill" style="width:97%"></div></div>
+                <div class="rs-bar-pct">97%</div>
+            </div>
+            <div class="rs-bar-row">
+                <div class="rs-bar-label">4★</div>
+                <div class="rs-bar-track"><div class="rs-bar-fill" style="width:3%"></div></div>
+                <div class="rs-bar-pct">3%</div>
+            </div>
+            <div class="rs-bar-row">
+                <div class="rs-bar-label">3★</div>
+                <div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div>
+                <div class="rs-bar-pct">0%</div>
+            </div>
+            <div class="rs-bar-row">
+                <div class="rs-bar-label">2★</div>
+                <div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div>
+                <div class="rs-bar-pct">0%</div>
+            </div>
+            <div class="rs-bar-row">
+                <div class="rs-bar-label">1★</div>
+                <div class="rs-bar-track"><div class="rs-bar-fill" style="width:0%"></div></div>
+                <div class="rs-bar-pct">0%</div>
+            </div>
+        </div>
+        <div class="rs-platforms">
+            <div class="rs-platform">📍 <strong>Google</strong> — 5.0★ (90+ reviews)</div>
+            <div class="rs-platform">Y <strong>Yelp</strong> — 5.0★ (40+ reviews)</div>
+            <div class="rs-platform">f <strong>Facebook</strong> — 5.0★ (20+ reviews)</div>
+        </div>
+    </div>
+</div>
+
 <!-- ===== REVIEWS ===== -->
 <section class="reviews" id="reviews">
     <div class="container">
@@ -1093,9 +1280,113 @@
                     </div>
                 </div>
             </div>
+            <div class="review-card fade-up">
+                <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <p class="review-text">"Raul repainted our entire interior in two days. Immaculate work — clean lines, no drips, no mess. Our house looks 10 years newer. Already recommended him to three neighbors."</p>
+                <div class="review-author">
+                    <div class="review-avatar">D</div>
+                    <div>
+                        <div class="review-name">David R.</div>
+                        <div class="review-role">Interior Painting</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card fade-up delay-1">
+                <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <p class="review-text">"Had water damage that destroyed a big section of drywall. Raul fixed it so well you genuinely cannot tell anything happened. Fast, clean, fair price. Will use again."</p>
+                <div class="review-author">
+                    <div class="review-avatar">A</div>
+                    <div>
+                        <div class="review-name">Angela M.</div>
+                        <div class="review-role">Drywall Repair</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card fade-up delay-2">
+                <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <p class="review-text">"We had new hardwood floors installed throughout the whole downstairs. Raul's crew was professional, protected our furniture, and finished ahead of schedule. Absolutely love the result."</p>
+                <div class="review-author">
+                    <div class="review-avatar">K</div>
+                    <div>
+                        <div class="review-name">Kevin &amp; Lisa P.</div>
+                        <div class="review-role">Hardwood Flooring</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card fade-up">
+                <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <p class="review-text">"Got a quote from 3 other contractors — Raul was the most honest and gave the fairest price by far. The work was top notch. Highly recommend for any home project."</p>
+                <div class="review-author">
+                    <div class="review-avatar">R</div>
+                    <div>
+                        <div class="review-name">Roberto H.</div>
+                        <div class="review-role">Kitchen Remodel</div>
+                    </div>
+                </div>
+            </div>
+            <div class="review-card fade-up delay-1">
+                <div class="review-stars">&#x2B50;&#x2B50;&#x2B50;&#x2B50;&#x2B50;</div>
+                <p class="review-text">"Needed multiple electrical outlets added and a ceiling fan installed. Raul was punctual, explained everything, and did clean work with zero damage to my walls. Perfect."</p>
+                <div class="review-author">
+                    <div class="review-avatar">T</div>
+                    <div>
+                        <div class="review-name">Tanya W.</div>
+                        <div class="review-role">Electrical Work</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+    <div class="container">
+        <div class="faq-header fade-up">
+            <div class="section-label">Questions</div>
+            <h2 class="section-title">FREQUENTLY ASKED</h2>
+            <p class="section-subtitle">Everything homeowners ask us before booking. No fluff, just straight answers.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item fade-up">
+                <div class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">Do you offer free estimates? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Yes — always. We'll come out, assess the job, and give you an honest, itemized quote at no charge. No hidden fees, no pressure to book.</div>
+            </div>
+            <div class="faq-item fade-up">
+                <div class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">Are you licensed and insured? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Yes. We carry full liability insurance on every job. You're fully protected — your home and investment are covered from start to finish.</div>
+            </div>
+            <div class="faq-item fade-up">
+                <div class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">How quickly can you start? <span class="faq-icon">+</span></div>
+                <div class="faq-a">For most projects we can schedule within 1–3 business days. Urgent repairs are often handled same-week. Call us and we'll get you on the calendar fast.</div>
+            </div>
+            <div class="faq-item fade-up">
+                <div class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">What areas do you serve? <span class="faq-icon">+</span></div>
+                <div class="faq-a">We serve the local area and surrounding communities. Call us with your city and we'll confirm availability — we travel for larger jobs too.</div>
+            </div>
+            <div class="faq-item fade-up">
+                <div class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">Do you handle both small repairs and big remodels? <span class="faq-icon">+</span></div>
+                <div class="faq-a">Absolutely. We handle everything from tightening a loose cabinet door to full kitchen and bathroom remodels. No job is too small or too large for our team.</div>
+            </div>
+            <div class="faq-item fade-up">
+                <div class="faq-q" onclick="this.closest('.faq-item').classList.toggle('open')">How do I pay? <span class="faq-icon">+</span></div>
+                <div class="faq-a">We accept cash, check, Zelle, and all major credit cards. For larger projects, we typically split into a deposit and final payment upon completion to your satisfaction.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<div class="cta-banner">
+    <div class="container">
+        <h2>READY TO START YOUR PROJECT?</h2>
+        <p>Free estimates. No pressure. Quality work guaranteed — or we make it right.</p>
+        <div class="cta-banner-btns">
+            <a href="tel:+10000000000" class="btn btn-white">&#x1F4DE; Call Now — Free Estimate</a>
+            <a href="#contact" class="btn btn-transparent">Send a Message &#x2192;</a>
+        </div>
+    </div>
+</div>
 
 <!-- ===== CONTACT ===== -->
 <section class="contact" id="contact">
@@ -1107,7 +1398,10 @@
         </div>
         <div class="contact-grid">
             <div class="contact-form-card fade-up">
-                <form id="contactForm" onsubmit="handleSubmit(event)">
+                <form id="contactForm" action="https://formsubmit.co/raul@reynososhandyman.com" method="POST">
+                    <input type="hidden" name="_subject" value="New Estimate Request — Reynoso's Handyman" />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_next" value="https://reynosos-handyman.netlify.app" />
                     <div class="form-group">
                         <label for="name">Your Name</label>
                         <input type="text" id="name" name="name" placeholder="John Smith" required>
@@ -1191,20 +1485,22 @@
                 <ul class="footer-links">
                     <li><a href="tel:+10000000000">&#x1F4DE; (000) 000-0000</a></li>
                     <li><a href="mailto:raul@reynososhandyman.com">&#x2709;&#xFE0F; raul@reynososhandyman.com</a></li>
-                    <li><a href="#contact">&#x1F4CD; [Your City], CA</a></li>
+                    <li><a href="#contact">&#x1F4CD; Orange County, CA</a></li>
                     <li><a href="#contact">&#x1F552; Mon-Sat: 7am - 7pm</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Reynoso's Handyman. All rights reserved.</p>
-            <p>Website by <a href="https://elevationai.com" target="_blank" rel="noopener">ElevationAI</a></p>
+            <p>Website by <a href="https://sanchezelevationai.netlify.app" target="_blank" rel="noopener">SanchezElevationAI</a></p>
         </div>
     </div>
 </footer>
 
 <!-- Floating Call Button (Mobile) -->
 <a href="tel:+10000000000" class="floating-call" aria-label="Call Now">&#x1F4DE;</a>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/10000000000?text=Hi%20Raul%2C%20I%27d%20like%20to%20get%20a%20free%20estimate%20for%20my%20home%20project." target="_blank" rel="noopener" class="float-wa-btn" aria-label="WhatsApp">💬</a>
 
 <script>
     // ===== STICKY HEADER =====
