@@ -3,6 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
     <meta name="description" content="Reynoso's Handyman — Quality home repairs, remodeling, and construction services. Licensed & insured. Free estimates. Call today!">
     <meta name="keywords" content="handyman, home repair, remodeling, construction, kitchen remodel, bathroom remodel, painting, flooring, drywall, plumbing, electrical">
     <meta name="author" content="Reynoso's Handyman">
@@ -961,7 +969,7 @@
                 <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#reviews">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="tel:+13102916004" class="nav-cta">Call Now</a></li>
+                <li><a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})" class="nav-cta">Call Now</a></li>
             </ul>
         </nav>
         <div class="hamburger" id="hamburger" aria-label="Menu" role="button" tabindex="0">
@@ -978,7 +986,7 @@
     <a href="#gallery" class="mobile-link">Gallery</a>
     <a href="#reviews" class="mobile-link">Reviews</a>
     <a href="#contact" class="mobile-link">Contact</a>
-    <a href="tel:+13102916004" class="mobile-cta">&#x1F4DE; Call Now</a>
+    <a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})" class="mobile-cta">&#x1F4DE; Call Now</a>
 </nav>
 
 <!-- ===== HERO ===== -->
@@ -990,7 +998,7 @@
                 <h1>REYNOSO'S<br><span>HANDYMAN</span></h1>
                 <p class="hero-tagline"><strong>Quality Work. Fair Prices. Done Right.</strong><br>From small repairs to full remodels — Raul and his team deliver results you can trust.</p>
                 <div class="hero-btns">
-                    <a href="tel:+13102916004" class="btn btn-primary">&#x1F4DE; Call Now — Free Estimate</a>
+                    <a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})" class="btn btn-primary">&#x1F4DE; Call Now — Free Estimate</a>
                     <a href="#services" class="btn btn-outline">View Services</a>
                 </div>
                 <div class="hero-stats">
@@ -1382,7 +1390,7 @@
         <h2>READY TO START YOUR PROJECT?</h2>
         <p>Free estimates. No pressure. Quality work guaranteed — or we make it right.</p>
         <div class="cta-banner-btns">
-            <a href="tel:+13102916004" class="btn btn-white">&#x1F4DE; Call Now — Free Estimate</a>
+            <a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})" class="btn btn-white">&#x1F4DE; Call Now — Free Estimate</a>
             <a href="#contact" class="btn btn-transparent">Send a Message &#x2192;</a>
         </div>
     </div>
@@ -1429,7 +1437,7 @@
                         <label for="message">Tell Us About Your Project</label>
                         <textarea id="message" name="message" placeholder="Describe what you need done..." rows="4"></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary form-submit">Send Request &#x2192;</button>
+                    <button type="submit" class="btn btn-primary form-submit" onclick="gtag('event','form_submit',{'event_category':'lead','event_label':'reynosos_contact_form'})">Send Request &#x2192;</button>
                 </form>
             </div>
             <div class="contact-info-side fade-up delay-1">
@@ -1437,7 +1445,7 @@
                     <div class="call-icon">&#x1F4DE;</div>
                     <h3>CALL RAUL DIRECTLY</h3>
                     <p>Available Mon-Sat, 7am - 7pm</p>
-                    <a href="tel:+13102916004">(310) 291-6004</a>
+                    <a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})">(310) 291-6004</a>
                 </div>
                 <div class="contact-map">
                     <div class="map-placeholder">
@@ -1483,7 +1491,7 @@
             <div>
                 <div class="footer-heading">Contact</div>
                 <ul class="footer-links">
-                    <li><a href="tel:+13102916004">&#x1F4DE; (310) 291-6004</a></li>
+                    <li><a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})">&#x1F4DE; (310) 291-6004</a></li>
                     <li><a href="mailto:raul@reynososhandyman.com">&#x2709;&#xFE0F; raul@reynososhandyman.com</a></li>
                     <li><a href="#contact">&#x1F4CD; Orange County, CA</a></li>
                     <li><a href="#contact">&#x1F552; Mon-Sat: 7am - 7pm</a></li>
@@ -1498,7 +1506,7 @@
 </footer>
 
 <!-- Floating Call Button (Mobile) -->
-<a href="tel:+13102916004" class="floating-call" aria-label="Call Now">&#x1F4DE;</a>
+<a href="tel:+13102916004" onclick="gtag('event','phone_call',{'event_category':'lead','event_label':'reynosos_call'})" class="floating-call" aria-label="Call Now">&#x1F4DE;</a>
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/13102916004?text=Hi%20Raul%2C%20I%27d%20like%20to%20get%20a%20free%20estimate%20for%20my%20home%20project." target="_blank" rel="noopener" class="float-wa-btn" aria-label="WhatsApp">💬</a>
 
